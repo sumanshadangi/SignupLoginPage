@@ -52,6 +52,15 @@ function Login() {
             )
             return false
         }
+        else if (!values.email.includes('.com')) {
+            setValidationMsg({ ...validationMsg, email: "Enter valid email address" })
+            setValidation(
+                {
+                    email: false,
+                    password: true
+                }
+            )
+        }
         else {
             setValidation({
                 email: true,
